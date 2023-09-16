@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    justify-content: space-between;
     .main-bg{
         background-color: #FFF;
         position: relative;
@@ -15,6 +16,14 @@
             margin-top: 370px;
             left: 250px;
         }
+    }
+
+    .input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10%;
+        margin-bottom: 20%;
     }
 
 }

@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    // background-color: aqua;
+    padding: 5px;
+
+    input{
+        border: 1px solid #d4cfc3;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 5px;
+        width: 60%;
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+    label{
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .expAndCVC{
+        display: flex;
+
+        .exp{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            input{
+                width: 30%;
+            }
+            .exp-inputs{
+                display: flex;
+                
+            }
+        }
+
+        .CVC{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
