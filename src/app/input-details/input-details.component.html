@@ -1,20 +1,20 @@
 <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
     <div class="container">
         <label for="">CARDHOLDER NAME</label>
-        <input type="text" placeholder="e.g. Jane Appleseed" formControlName="cardholderName">
+        <input type="text" placeholder="e.g. Jane Appleseed" formControlName="cardholderName" (input)="inputChange()" [(ngModel)]="cardData.cardholderName">
         <label for="">CARD NUMBER</label>
-        <input type="number" placeholder="e.g. 1234 5678 9123 0000" formControlName="cardNumber">
+        <input type="number" placeholder="e.g. 1234 5678 9123 0000" formControlName="cardNumber" (input)="inputChange()" [(ngModel)]="cardData.cardNumber">
         <div class="expAndCVC">
             <div class="exp">
                 <label for="">EXP. DATE (MM/YY)</label>
                 <div class="exp-inputs">
-                    <input type="number" placeholder="MM" formControlName="expMonth">
-                    <input type="number" placeholder="YY" formControlName="expYear">
+                    <input type="number" placeholder="MM" formControlName="expMonth" (input)="inputChange()" [(ngModel)]="cardData.expMonth">
+                    <input type="number" placeholder="YY" formControlName="expYear" (input)="inputChange()" [(ngModel)]="cardData.expYear">
                 </div>
             </div>
             <div class="CVC">
                 <label for="">CVC</label>
-                <input type="number" placeholder="e.g. 123" formControlName="cvc">
+                <input type="number" placeholder="e.g. 123" formControlName="cvc" (input)="inputChange()" [(ngModel)]="cardData.cvc">
             </div>
         </div>
         <button type="submit" [disabled]="cardForm.invalid">Confirm</button>

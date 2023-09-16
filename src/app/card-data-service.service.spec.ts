@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CardDataServiceService } from './card-data-service.service';
+import { CardDataServiceService } from './card-data.service';
 
 describe('CardDataServiceService', () => {
   let service: CardDataServiceService;
