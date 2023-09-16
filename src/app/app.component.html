@@ -8,9 +8,16 @@
           stroke="#fff" />
       </svg>
     </div>
+    <div class="cardNumber">
+      {{cardData.cardNumber}}
+    </div>
     <img src="../assets/bg-main-desktop.png" alt="main" srcset="" class="bg-main-desktop">
     <img src="../assets/bg-card-front.png" alt="front of your card" srcset="" class="bg-card-front">
+    
     <img src="../assets/bg-card-back.png" alt="back of your card" srcset="" class="bg-card-back">
+    <div class="cvc">
+      {{cardData.cvc}}
+    </div>
   </div>
   <div class="input">
     <app-input-details></app-input-details>
