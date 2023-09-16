@@ -1,0 +1,16 @@
+.main-bg{
+    background-color: #FFF;
+    position: relative;
+
+    .bg-card-front{
+        position: absolute;
+        margin-top: 100px;
+        left: 130px;
+    }
+
+    .bg-card-back{
+        position: absolute;
+        margin-top: 370px;
+        left: 250px;
+    }
+}
