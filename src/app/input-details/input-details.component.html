@@ -1,20 +1,22 @@
-<div class="container">
-    <label for="">CARDHOLDER NAME</label>
-    <input type="text" placeholder="e.g. Jane Appleseed">
-    <label for="">CARD NUMBER</label>
-    <input type="number" placeholder="e.g. 1234 5678 9123 0000">
-    <div class="expAndCVC">
-        <div class="exp">
-            <label for="">EXP. DATE (MM/YY)</label>
-            <div class="exp-inputs">
-                <input type="number" placeholder="MM">
-                <input type="number" placeholder="YY">
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <label for="">CARDHOLDER NAME</label>
+        <input type="text" placeholder="e.g. Jane Appleseed" formControlName="cardholderName">
+        <label for="">CARD NUMBER</label>
+        <input type="number" placeholder="e.g. 1234 5678 9123 0000" formControlName="cardNumber">
+        <div class="expAndCVC">
+            <div class="exp">
+                <label for="">EXP. DATE (MM/YY)</label>
+                <div class="exp-inputs">
+                    <input type="number" placeholder="MM" formControlName="expMonth">
+                    <input type="number" placeholder="YY" formControlName="expYear">
+                </div>
+            </div>
+            <div class="CVC">
+                <label for="">CVC</label>
+                <input type="number" placeholder="e.g. 123" formControlName="cvc">
             </div>
         </div>
-        <div class="CVC">
-            <label for="">CVC</label>
-            <input type="number" placeholder="e.g. 123">
-        </div>
+        <button type="submit" [disabled]="cardForm.invalid">Confirm</button>
     </div>
-    <button type="submit">Confirm</button>
-</div>
+</form>
