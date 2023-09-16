@@ -42,4 +42,20 @@
             flex-direction: column;
         }
     }
+
+    button{
+        width: 62%;
+        height: 30px;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 5px;
+        background-color: #3f114d;
+        color: #FFF;
+        cursor: pointer;
+        outline: none;
+    }
+
+    button:hover{
+        opacity: 0.8;
+    }
 }
