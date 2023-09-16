@@ -4,11 +4,20 @@
     .main-bg{
         background-color: #FFF;
         position: relative;
+        z-index: -1;
     
         .bg-card-front{
             position: absolute;
             margin-top: 100px;
             left: 130px;
+            z-index: 0;
+        }
+
+        .circles{
+            position: absolute;
+            top: 130px;
+            left: 150px;
+            z-index: 1;
         }
     
         .bg-card-back{
