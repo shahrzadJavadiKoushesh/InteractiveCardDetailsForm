@@ -16,7 +16,7 @@ export class InputDetailsComponent {
     this.cardForm = this.fb.group({
       cardholderName: ['', Validators.required],
       cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/), Validators.maxLength(16)]],
-      expMonth: ['', [Validators.required, Validators.min(1), Validators.max(12)]],
+      expMonth: ['', [Validators.required, Validators.min(1), Validators.max(12), this.validateMonthRange.bind(this)]],
       expYear: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2)]],
       cvc: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]]
     });
@@ -24,6 +24,14 @@ export class InputDetailsComponent {
 
   inputChange() {
     this.cardDataService.setCardData(this.cardData);
+  }
+
+  validateMonthRange(control: AbstractControl): ValidationErrors | null {
+    const expMonth = +control.value;
+    if (expMonth < 1 || expMonth > 12) {
+      return { monthRange: true };
+    }
+    return null;
   }
 
   onSubmit() {
