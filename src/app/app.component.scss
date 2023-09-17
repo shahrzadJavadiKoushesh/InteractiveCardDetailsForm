@@ -16,9 +16,25 @@
         .cardNumber{
             position: absolute;
             z-index: 1;
-            // left: 130px;
-            left:625px ;
-            // top: -50px;
+            color: #FFF;
+            left: 160px;
+            top: 250px;
+        }
+
+        .cardholderName{
+            position: absolute;
+            z-index: 1;
+            color: #FFF;
+            left: 160px;
+            top: 300px;
+        }
+
+        .date{
+            position: absolute;
+            z-index: 1;
+            color: #FFF;
+            top: 300px;
+            left: 500px;
         }
 
         .circles{
