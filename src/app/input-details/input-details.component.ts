@@ -15,7 +15,7 @@ export class InputDetailsComponent {
   constructor(private fb: FormBuilder, private cardDataService: CardDataService) {
     this.cardForm = this.fb.group({
       cardholderName: ['', Validators.required],
-      cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/), Validators.maxLength(16)]],
+      cardNumber: ['', [Validators.required, Validators.pattern(/\d{4} \d{4} \d{4} \d{4}/gm),]],
       expMonth: ['', [Validators.required, Validators.min(1), Validators.max(12), this.validateMonthRange.bind(this)]],
       expYear: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2)]],
       cvc: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]]
