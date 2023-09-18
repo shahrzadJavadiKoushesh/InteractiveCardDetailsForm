@@ -14,7 +14,7 @@ export class InputDetailsComponent implements AfterViewInit {
 
   @ViewChildren('inputElement') inputElements!: QueryList<ElementRef<HTMLInputElement>>;
 
-  charLimits = [8, 19, 2, 2, 3];
+  charLimits = [10, 19, 2, 2, 3];
 
 
   constructor(private fb: FormBuilder, private cardDataService: CardDataService, private renderer: Renderer2) {
