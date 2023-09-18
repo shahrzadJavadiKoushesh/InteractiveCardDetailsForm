@@ -1,4 +1,5 @@
 # InteractiveCardDetailsForm
+I tried to solve [this](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw) challenge of Froneted Mentor with angular in September 2023.
 
 https://github.com/shahrzadJavadiKoushesh/InteractiveCardDetailsForm/assets/77495573/ce51224e-335c-4023-b9df-096436f8e3bb
 
