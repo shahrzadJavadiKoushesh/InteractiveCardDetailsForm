@@ -11,7 +11,7 @@ export class AppComponent {
 
   cardData: any = {}; 
 
-  constructor(private cardDataService: CardDataService){
+  constructor(public cardDataService: CardDataService){
     this.cardDataService.cardDataEmitter.subscribe((data: any) => {
       this.cardData = data;
     });

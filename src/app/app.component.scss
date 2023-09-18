@@ -1,19 +1,20 @@
-.container{
+.container {
     display: flex;
     justify-content: space-between;
-    .main-bg{
+
+    .main-bg {
         background-color: #FFF;
         position: relative;
         z-index: -1;
-    
-        .bg-card-front{
+
+        .bg-card-front {
             position: absolute;
             margin-top: 100px;
             left: 130px;
             z-index: 0;
         }
 
-        .cardNumber{
+        .cardNumber {
             position: absolute;
             z-index: 1;
             color: #FFF;
@@ -21,7 +22,7 @@
             top: 250px;
         }
 
-        .cardholderName{
+        .cardholderName {
             position: absolute;
             z-index: 1;
             color: #FFF;
@@ -29,7 +30,7 @@
             top: 300px;
         }
 
-        .date{
+        .date {
             position: absolute;
             z-index: 1;
             color: #FFF;
@@ -37,21 +38,21 @@
             left: 500px;
         }
 
-        .circles{
+        .circles {
             position: absolute;
             top: 130px;
             left: 150px;
             z-index: 1;
         }
-    
-        .bg-card-back{
+
+        .bg-card-back {
             position: absolute;
             margin-top: 370px;
             left: 250px;
             z-index: 0;
         }
 
-        .cvc{
+        .cvc {
             z-index: 1;
             position: absolute;
             left: 625px;
@@ -59,13 +60,24 @@
         }
     }
 
-    .input{
+    .input {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-right: 10%;
         margin-bottom: 20%;
+        z-index: 0;
+        position: relative;
+
+        app-complete{
+            z-index: 1;
+            margin-right: 300px;
+
+        }
+
+        app-input-details{
+            z-index: 0;
+        }
     }
-
 }
-

@@ -7,6 +7,7 @@ import { EventEmitter } from '@angular/core';
 export class CardDataService {
 
   cardDataEmitter = new EventEmitter<any>();
+  complete: boolean = false;
 
   constructor() { }
 

@@ -39,6 +39,7 @@ export class InputDetailsComponent {
       console.log('Form submitted with data:', this.cardForm.value);
       const cardData = this.cardForm.value;
       this.cardDataService.setCardData(cardData);
+      this.cardDataService.complete = true;
     } else {
       console.log('Form is invalid. Please check the fields.');
     }
