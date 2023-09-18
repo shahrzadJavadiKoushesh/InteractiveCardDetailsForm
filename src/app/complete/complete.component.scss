@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    
+    strong{
+        color: #3f114d;
+        margin-top: 10px;
+    }
+
+    p{
+        color: #a3a19a;
+    }
+
+    button{
+        width: 72%;
+        background-color: #3f114d;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        opacity: 0.8;
+    }
+
+
+}
