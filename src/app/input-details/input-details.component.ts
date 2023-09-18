@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormArray } from '@angular/forms';
 import { CardDataService } from '../card-data.service';
 
@@ -7,12 +7,17 @@ import { CardDataService } from '../card-data.service';
   templateUrl: './input-details.component.html',
   styleUrls: ['./input-details.component.scss']
 })
-export class InputDetailsComponent {
+export class InputDetailsComponent implements AfterViewInit {
 
   cardForm!: FormGroup;
   cardData: any = {};
 
-  constructor(private fb: FormBuilder, private cardDataService: CardDataService) {
+  @ViewChildren('inputElement') inputElements!: QueryList<ElementRef<HTMLInputElement>>;
+
+  charLimits = [8, 19, 2, 2, 3];
+
+
+  constructor(private fb: FormBuilder, private cardDataService: CardDataService, private renderer: Renderer2) {
     this.cardForm = this.fb.group({
       cardholderName: ['', Validators.required],
       cardNumber: ['', [Validators.required, Validators.pattern(/\d{4} \d{4} \d{4} \d{4}/gm),]],
@@ -20,6 +25,23 @@ export class InputDetailsComponent {
       expYear: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2)]],
       cvc: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]]
     });
+  }
+
+  ngAfterViewInit() {
+    this.inputElements.first.nativeElement.focus();
+  }
+
+  handleInputFocus(currentIndex: number) {
+    const nextIndex = currentIndex + 1;
+
+    const currentInput = this.inputElements.toArray()[currentIndex].nativeElement;
+    const charLimit = this.charLimits[currentIndex];
+
+    if (currentInput.value.length >= charLimit) {
+      if (nextIndex < this.inputElements.length) {
+        this.renderer.selectRootElement(this.inputElements.toArray()[nextIndex].nativeElement).focus();
+      }
+    }
   }
 
   inputChange() {
@@ -44,7 +66,4 @@ export class InputDetailsComponent {
       console.log('Form is invalid. Please check the fields.');
     }
   }
-
-
-
 }
