@@ -14,7 +14,7 @@ export class InputDetailsComponent implements AfterViewInit {
 
   @ViewChildren('inputElement') inputElements!: QueryList<ElementRef<HTMLInputElement>>;
 
-  charLimits = [10, 19, 2, 2, 3];
+  charLimits = [8, 19, 2, 2, 3];
 
 
   constructor(private fb: FormBuilder, private cardDataService: CardDataService, private renderer: Renderer2) {
@@ -42,6 +42,7 @@ export class InputDetailsComponent implements AfterViewInit {
         this.renderer.selectRootElement(this.inputElements.toArray()[nextIndex].nativeElement).focus();
       }
     }
+    this.cardDataService.setCardData(this.cardData);
   }
 
   inputChange() {
