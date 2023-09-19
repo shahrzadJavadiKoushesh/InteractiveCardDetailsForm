@@ -24,7 +24,7 @@
             </div>
             <div class="CVC">
                 <label for="">CVC</label>
-                <input #inputElement type="text" placeholder="e.g. 123" formControlName="cvc" (input)="inputChange()"
+                <input #inputElement type="text" placeholder="e.g. 123" formControlName="cvc" (input)="handleInputFocus(4)" maxlength="{{charLimits[4]}}"
                     [(ngModel)]="cardData.cvc">
             </div>
         </div>
